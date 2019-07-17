@@ -46,23 +46,20 @@ This will create a specific branch containing only what's inside the path given 
 ### ***1. In your own repository, add the source package as a new remote:***
 
 ```sh
-git remote add react-scripts-fork-remote ../create-react-app/packages/react-scripts/
-```
-
-```sh
 git remote add react-scripts-cra-remote ../create-react-app
 ```
 
 ### ***2. Add package to your repository, in the specified directory:***
 
 ```sh
-git subtree add -P packages/react-scripts react-scripts-cra-remote react-scripts@3.0.1 --squash
+git subtree add -P packages/react-scripts react-scripts-cra-remote react-scripts-fork --squash
 ```
 or
 
 ```sh
-git subtree add -P packages/react-scripts react-scripts-cra-remote react-scripts-fork --squash
+git subtree add -P packages/react-scripts react-scripts-cra-remote react-scripts@3.0.1 --squash
 ```
+
 
 Using `--squash` means that the whole commit history will be squashed into a single commit when we add the package. This is usually what you want to do when forking an external package like this. If you want, you can omit `--squash` but your commit log will then contain the full history for all the files in the repo you just forked out of. This might or might not be desirable.
 
@@ -85,5 +82,19 @@ An important feature of `git subtree` is that you're able to update your fork wh
 
 *After you've fixed potential merge conflicts, you should have an updated version of your forked package. Voilà!*
 
+---
+## Publish custom react-scripts to NPM
+
+### 1. From your terminal, change path to *../path/to/repo/packages/react-scripts*
+
+### 2. Login to npm:
+```sh
+npm login
+```
+### 3. Go ahead and publish:
+
+```sh
+npm publish --access public
+```
 ---
 [Read this for more info.](https://www.hyperlab.se/blog/forking-parts-of-a-monorepo)
