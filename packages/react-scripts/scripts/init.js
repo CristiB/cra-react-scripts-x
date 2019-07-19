@@ -84,7 +84,7 @@ module.exports = function(
 ) {
 
   console.log();
-  console.log(chalk.yellow(`#=> '${appPackage.name}' start bootstraping with custom react-scripts.`));
+  console.log(chalk.yellow(`#=> Start bootstraping with custom react-scripts...`));
 
   const ownPath = path.dirname(
     require.resolve(path.join(__dirname, '..', 'package.json'))
