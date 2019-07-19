@@ -84,7 +84,7 @@ An important feature of `git subtree` is that you're able to update your fork wh
 
 ---
 ## Publish custom react-scripts to NPM
-
+---
 ### 1. From your terminal, change path to *../path/to/repo/packages/react-scripts*
 
 ### 2. Login to npm:
@@ -97,4 +97,9 @@ npm login
 npm publish --access public
 ```
 ---
+## Run with custom scripts (forked)
+---
+```sh
+npx create-react-app test-app --scripts-version cra-react-scripts-x
+```
 [Read this for more info.](https://www.hyperlab.se/blog/forking-parts-of-a-monorepo)

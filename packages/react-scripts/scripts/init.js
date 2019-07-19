@@ -82,6 +82,10 @@ module.exports = function(
   originalDirectory,
   template
 ) {
+
+  console.log();
+  console.log(chalk.yellow(`#=> '${appPackage.name}' start bootstraping with custom react-scripts.`));
+
   const ownPath = path.dirname(
     require.resolve(path.join(__dirname, '..', 'package.json'))
   );
@@ -218,7 +222,7 @@ module.exports = function(
   const displayedCommand = useYarn ? 'yarn' : 'npm';
 
   console.log();
-  console.log(chalk.red(`!!! Bootstraped with custom react-scripts: ${appPackage.name}`));
+  console.log(chalk.green(`!!! ${appPackage.name} was bootstraped with custom react-scripts.`));
   console.log();
   console.log(`Success! Created ${appName} at ${appPath}`);
   console.log('Inside that directory, you can run several commands:');
@@ -258,6 +262,9 @@ module.exports = function(
   }
   console.log();
   console.log('Happy hacking!');
+
+  console.log();
+  console.log(chalk.green(`#=> '${appPackage.name}' was bootstraped with custom react-scripts.`));
 };
 
 function isReactInstalled(appPackage) {
